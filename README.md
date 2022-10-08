@@ -21,8 +21,6 @@ The goal of this exercise is to collaborate on a simple project on GitHub as a t
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-
-
 ## Application
 
 This repository contains a partially implemented todo list written in PHP, HTML and CSS.
@@ -33,70 +31,66 @@ The incomplete lines of code are marked with the following comment: `// IMPLEMEN
 
 ### Tips
 
-* You may run this application on your local machine with [MAMP][mamp] or [WAMP][wamp], or with a local installation of PHP and MySQL if you already have them.
-* This repository contains a `todolist.sql` file you can use to create the database for this project.
+- You may run this application on your local machine with [MAMP][mamp] or [WAMP][wamp], or with a local installation of PHP and MySQL if you already have them.
+- This repository contains a `todolist.sql` file you can use to create the database for this project.
 
   If you use MAMP, you can run its contents from MAMP's phpMyAdmin interface.
-* You can update the [constants at the top of `index.php`][ex-constants] to match your local installation:
-  * The value of `BASE_URL` must match the URL at which the application is available.
+
+- You can update the [constants at the top of `index.php`][ex-constants] to match your local installation:
+
+  - The value of `BASE_URL` must match the URL at which the application is available.
 
     For example, if you use MAMP and put this repository in MAMP's `htdocs` directory,
     the application will be accessible at http://localhost:8888/comem-archidep-php-todo-exercise/ (with the default ports).
     In this situation, the value of `BASE_URL` should be `/comem-archidep-php-todo-exercise/`.
-  * You can change the value of `DB_PORT` to match your local MySQL port (for example, with MAMP, the default is 8889).
 
-
+  - You can change the value of `DB_PORT` to match your local MySQL port (for example, with MAMP, the default is 8889).
 
 ## Instructions
 
 The first two team members will be referred to as **Bob** and **Alice**.
 
 1. **Bob**
-   * Open the [MediaComem/comem-archidep-php-todo-exercise repository][ex-repo] in your browser.
-   * Click the **`Fork`** button in the top-right corner of the page (you must be logged in to GitHub).
+
+   - Open the [MediaComem/comem-archidep-php-todo-exercise repository][ex-repo] in your browser.
+   - Click the **`Fork`** button in the top-right corner of the page (you must be logged in to GitHub).
 
      ![Fork](images/fork.png)
 
      This will create a copy of the repository on GitHub that belongs to you (under your GitHub username instead of `MediaComem`).
-   * In the settings of that repository, add **Alice** and any other team members to the list of **Collaborators** (this will give them push access).
-   * Clone the repository on your local machine.
+
+   - In the settings of that repository, add **Alice** and any other team members to the list of **Collaborators** (this will give them push access).
+   - Clone the repository on your local machine.
+
 2. **Alice** (and other team members)
-   * Clone Bob's repository on your local machine.
+   - Clone Bob's repository on your local machine.
 3. **All**
-   * Implement one or more missing feature.
-   * Commit the change and push it to Bob's repository on GitHub.
-
-
+   - Implement one or more missing feature.
+   - Commit the change and push it to Bob's repository on GitHub.
 
 ## End result
 
 The fully implemented application should look and behave like this:
 https://comem-archidep-php-todolist.herokuapp.com
 
-
-
 ## Evaluation
 
-* The work must be delivered in the forked repository on GitHub.
-* The todo list must work.
-  * Tasks can be added, toggled and deleted.
-  * Tasks must be listed from newest to oldest (i.e. by descending creation date).
-* Each team member must contribute at least one useful commit.
-  * The commits must be made on each team member's machine using their local Git
+- The work must be delivered in the forked repository on GitHub.
+- The todo list must work.
+  - Tasks can be added, toggled and deleted.
+  - Tasks must be listed from newest to oldest (i.e. by descending creation date).
+- Each team member must contribute at least one useful commit.
+  - The commits must be made on each team member's machine using their local Git
     installation, not through GitHub's web interface.
-  * The author name and email address of each team member's commits must be correctly configured.
-* Commit messages must be relevant (i.e. describe the change that was made).
-
-
+  - The author name and email address of each team member's commits must be correctly configured.
+- Commit messages must be relevant (i.e. describe the change that was made).
 
 ## Delivery
 
 Send one email per team to the teacher with:
 
-* The link to the team's solution repository on GitHub.
-* The list of team members (and their GitHub username if it is not obvious).
-
-
+- The link to the team's solution repository on GitHub.
+- The list of team members (and their GitHub username if it is not obvious).
 
 ## Architecture
 
@@ -107,8 +101,6 @@ Apache running on port 8888 and MySQL on port 8889).
 ![Diagram](./images/simplified-architecture.png)
 
 > [PDF version](./images/simplified-architecture.pdf).
-
-
 
 ## Troubleshooting
 
@@ -143,16 +135,14 @@ PHP Fatal error:
 It means that you are not using the correct database connection parameters. Make
 sure that the following parameters are configured correctly:
 
-* The `DB_PASS` parameter must be the password you used when you created the
+- The `DB_PASS` parameter must be the password you used when you created the
   `todolist` user with the SQL in the `todolist.sql` file.
-* The `DB_PORT` parameter must be the port on which you MySQL server is
+- The `DB_PORT` parameter must be the port on which you MySQL server is
   listening. The default MySQL port is 3306, but it may be different depending
   on your installation method. For example, MAMP uses port 8888 by default.
 
 > You may also have made a mistake when creating the MySQL user. If you are not
-> sure, you can delete the user by running the query `DROP USER
-> 'todolist'@'localhost';`, then re-run the `CREATE USER ...` and `GRANT ALL
-> PRIVILEGES ...` queries of the `todolist.sql` file.
+> sure, you can delete the user by running the query `DROP USER 'todolist'@'localhost';`, then re-run the `CREATE USER ...` and `GRANT ALL PRIVILEGES ...` queries of the `todolist.sql` file.
 
 ### `Invalid argument supplied for foreach()`
 
@@ -190,17 +180,15 @@ You may have configured your `BASE_URL` without a trailing slash (e.g.
 The Apache web server (in MAMP or equivalent) will not treat requests to those
 two paths in the same way:
 
-* The first path `/comem-archidep-php-todo-exercise` will probably be redirected
+- The first path `/comem-archidep-php-todo-exercise` will probably be redirected
   to `/comem-archidep-php-todo-exercise/` with a standard Apache configuration.
   Any form data submitted in the request will be lost in the redirection.
-* The second path `/comem-archidep-php-todo-exercise/` refers to the directory
+- The second path `/comem-archidep-php-todo-exercise/` refers to the directory
   by the same name. In that case, a standard Apache configuration will probably
   execute the `index.php` page in that directory.
 
 Without the trailing slash, your application may display correctly, but form
 submission may be broken.
-
-
 
 [ex-constants]: https://github.com/MediaComem/comem-archidep-php-todo-exercise/blob/master/index.php#L3-L8
 [ex-repo]: https://github.com/MediaComem/comem-archidep-php-todo-exercise
