@@ -27,7 +27,7 @@ if (isset($_POST['action'])) {
 
       $title = $_POST['title'];
       if ($title && $title !== '') {
-        $insertQuery = 'INSERT INTO todo VALUES(NULL, \'' . $db->quote($title) . '\', FALSE, CURRENT_TIMESTAMP)';
+        $insertQuery = 'INSERT INTO todo VALUES(NULL,' . $db->quote($title) . ', FALSE, CURRENT_TIMESTAMP);';
         if (!$db->query($insertQuery)) {
           die(print_r($db->errorInfo(), true));
         }
